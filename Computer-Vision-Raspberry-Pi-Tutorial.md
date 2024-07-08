@@ -73,15 +73,11 @@ _Goal: In this section we are installing an operating system on our Raspberry Pi
 ### 2.2 Connecting to your Raspberry Pi (and your Raspberry Pi to the Internet)
 
 1. Tell Noah and Joe what you named your Raspberry Pi in the last step, they will then tell you what your Raspberry Pi's IP address is. Write this down as we'll be using this later on in the tutorial
-
    > An IP address is like a street address for your Raspberry Pi, but in the computer world instead of the real world
-
 2. Use SSH to access the terminal of your Raspberry Pi, be sure to replace `<IP address>` with the IP Noah or Joe gave you
-
-```bash
-ssh username@<IP address>
-```
-
+  ```bash
+  ssh username@<IP address>
+  ```
 3. Say "yes" and connect to the pi using the password you set earlier
 
 ### 2.3 Update/Upgrade
