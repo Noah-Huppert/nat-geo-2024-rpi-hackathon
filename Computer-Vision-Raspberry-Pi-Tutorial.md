@@ -54,7 +54,10 @@ _Goal: In this section we are installing an operating system on our Raspberry Pi
 - Click Next and then click edit settings
   ![alt_text](images/os-customisation-prompt.png)
 
-- Choose the options as detailed in the screenshot below. Note, you should choose your own username of the Pi, WiFi settings, and password. **Make sure you record your username and password down!**
+- Choose the options as detailed in the screenshot below. Note, you should choose your own username and password. **Make sure you record your username and password down!**
+  - For "hostname" put your team name
+  - Put `National Geographic Hackathon` for the Wifi name
+  - Put `boston2024` for the Wifi password
 
   ![alt_text](images/image19.png)
 
@@ -64,42 +67,22 @@ _Goal: In this section we are installing an operating system on our Raspberry Pi
 
 - Click “SAVE” - this will install the latest operating system on your SD card.
 
+- Ensure your Raspberry Pi is unplugged, then remove the SD card from your laptop and put it in your Raspberry Pi
+- Plug the power in to your Raspberry Pi, wait about 30 seconds for it to turn on
+
 ### 2.2 Connecting to your Raspberry Pi (and your Raspberry Pi to the Internet)
 
-_NOTE: In a classroom with many students we must turn the Pis one by one and see their different IP addresses._
+1. Tell Noah and Joe what you named your Raspberry Pi in the last step, they will then tell you what your Raspberry Pi's IP address is. Write this down as we'll be using this later on in the tutorial
 
-**Required Downloads:**
+   > An IP address is like a street address for your Raspberry Pi, but in the computer world instead of the real world
 
-- [Visit the nmap install page here](https://nmap.org/download.html)
-
-0. Install nmap on your computer. nmap is a network sniffing tool for understanding network traffic. The goal is to identify the IP address of our raspberry PI.
-
-1. First identify your own IP address. You can do this by holding on the “option” button on your Mac keyboard while clicking on the “wifi” button on your top menu. Write down the IP address that your computer is using. The first time you run nmap from your terminal make sure you do it without turning on your PI.
+2. Use SSH to access the terminal of your Raspberry Pi, be sure to replace `<IP address>` with the IP Noah or Joe gave you
 
 ```bash
-nmap -sP <YOUR_IP_ADDRESS>/24
-nmap -sP 192.168.1.79/24
+ssh username@<IP address>
 ```
 
-2. Now that you’ve seen the IP addresses that are in your network, turn on your PI and see if there is \_a new IP address. \_The new IP address will be the IP address that your PI is using. Note, if you don’t see a new IP address you might have to plug the SD card back on your computer and make sure that you’ve done all the steps in the previous section correctly. Once you identify it you’re going to want to ssh into it from your Mac’s terminal:
-
-```bash
-ssh <PI USERNAME>@<YOUR IP NETWORK>
-# for example
-ssh pi-name@192.168.1.90
-```
-
-3. Skip this step if you ssh'd into your Pi. If you don’t find your raspberry address here, or if it doesn’t work do:
-
-```bash
-ssh username@hostname.local
-```
-
-4. Say "yes" and connect to the pi using the password you set earlier. If you are able to ssh then you’re connected to the internet!
-
-5. Copy and paste the IP address.
-6. Say “yes” and connect to the pi using the password you set earlier. If you are able to ssh then you’re connected to the internet!
-7. Write down your PI’s **IP address** somewhere safe, we’re going to use them later on in the tutorial.
+3. Say "yes" and connect to the pi using the password you set earlier
 
 ### 2.3 Update/Upgrade
 1. Now that you are logged in, perform an update/update:
