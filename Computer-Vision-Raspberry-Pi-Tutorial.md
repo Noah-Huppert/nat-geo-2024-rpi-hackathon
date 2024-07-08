@@ -254,7 +254,7 @@ To setup run the following script while you are ssh’d in or on a terminal open
 
 ```bash
 cd ~
-sudo pip3 install --upgrade adafruit-python-shell click
+pip3 install --upgrade adafruit-python-shell click
 sudo apt-get install -y git
 git clone https://github.com/adafruit/Raspberry-Pi-Installer-Scripts.git
 cd Raspberry-Pi-Installer-Scripts
